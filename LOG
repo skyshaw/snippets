@@ -1,3 +1,4 @@
 1 [cpp][template][function-template][overload] tpl-func.cpp
 2 [cpp][template][specialization][total][partial] template.cpp
 3 [cpp][uncopyable][base-class] uncopyable.cpp 
+4 [cpp][weak_ptr][memory][memory-leak] weak_ptr.cpp
