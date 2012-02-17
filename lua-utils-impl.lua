@@ -55,3 +55,36 @@ local function getnext (list,  node)
 end
 
 function traverse (list) return getnext, list, nil end
+
+
+--f是字符串表示，如t.x.y
+function getfield (f)
+    local v = _G
+    for w in string.gmatch(f, "[%w]+") do
+        v = v[w]
+    end
+    return v
+end
+
+--同上
+function setfield (f, v)
+    local t = _G
+    for w, d in string.gmatch(f, "([%w_]+)(.?)") do
+        if d == "."  then
+            t[w] = t[w] or {}
+            t = t[w]
+        else
+            t[w] = v
+        end
+    end
+end
+
+
+
+
+
+
+
+
+
+
