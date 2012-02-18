@@ -79,12 +79,22 @@ function setfield (f, v)
     end
 end
 
-
-
-
-
-
-
-
-
-
+--[[
+--require的大致过程，这里的findloader并不是这个名字，或其他形式，
+--这里只是抽象的说法
+function require (name)
+    print("hello world")
+    if not package.loaded[name] then
+        local loader = findloader(name)
+        if loader == nil then
+            error("unable to load module" .. name)
+        end
+        package.loaded[name] = true
+        local res = loader(name)
+        if res ~= nil then
+            package.loaded[name] = res
+        end
+    end
+    return package.loaded[name]
+end
+--]]
