@@ -4,4 +4,4 @@
 4. [cpp][weak_ptr][memory][memory-leak] weak_ptr.cpp
 5. [cpp][vector][constructor][default-constructor] vector.cpp
 6. [lua][require][module] lua-utils-impl.lua
-
+7. [cpp][template][count] count.hpp
