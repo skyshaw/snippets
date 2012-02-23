@@ -1,5 +1,6 @@
 #ifndef _COUNT_H_
 #define _COUNT_H_
+#include <cstddef>
 //
 // 子类以private方式继承此类, 如
 // class Foo: private Counted<Foo> 
