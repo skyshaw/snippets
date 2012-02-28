@@ -1,19 +1,22 @@
 import os
 import re
 
-def get_item_lists(index_page):
+def get_item_lists(filename):
+    f = open(filename, "r")
     item_list = []
     while True:
-        line = index_page.readline()
+        line = f.readline()
         if not line:
             break
-        m = re.match(r'\[\[\./(.+)\.html\|.+\]\]', line)
-        item_list.append(m.group(1))
+        m = re.match(r'#\s+\[\[\./(.+)\.html\|.+\]\]', line)
+        if m is not None:
+            item_list.append(m.group(1))
+    f.close()
     return item_list
 
 def add_links():
-    index_page = open("index.wiki", 'w+')
-    item_list = get_item_lists(index_page)
+    item_list = get_item_lists("index.wiki")
+    index_page = open("index.wiki", 'a')
     for item in os.listdir("."):
         if (not os.path.isdir(item)) and (item != "index.wiki") and \
             (item.endswith(".wiki")) and (item[:-5] not in item_list):
