@@ -5,3 +5,4 @@
 5. [cpp][vector][constructor][default-constructor] vector.cpp
 6. [lua][require][module] lua-utils-impl.lua
 7. [cpp][template][count] count.hpp
+8. [python][re][wiki][io] autowiki.py
