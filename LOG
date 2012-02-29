@@ -6,3 +6,4 @@
 6. [lua][require][module] lua-utils-impl.lua
 7. [cpp][template][count] count.hpp
 8. [python][re][wiki][io] autowiki.py
+9. [c][lua][call-c-from-lua] mylib.c
