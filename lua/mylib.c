@@ -27,8 +27,24 @@ static int l_dir(lua_State *L) {
     return 1;
 }
 
+static int l_map(lua_State *L) {
+    int i;
+    luaL_checktype(L, 1, LUA_TTABLE);
+    luaL_checktype(L, 2, LUA_TFUNCTION);
+    int n = lua_objlen(L, 1);
+    for (i = 1; i <= n; ++i) {
+        lua_pushvalue(L, 2);
+        lua_rawgeti(L, 1, i);
+        /*void lua_call (lua_State *L, int nargs, int nresults);*/
+        lua_call(L, 1, 1);
+        lua_rawseti(L, 1, i);
+    }
+    return 0;
+}
+
 static const struct luaL_Reg mylib[] = {
     {"dir", l_dir},
+    {"map", l_map},
     {NULL, NULL}
 };
 
