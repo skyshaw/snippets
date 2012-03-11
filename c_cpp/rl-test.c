@@ -27,17 +27,17 @@ int main(void)
 
     fp = fopen("./some_file_with_many_line", "r");
     if (fp == NULL)
-    exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     int start;
     int end;
     int i=0;
     start = rdtsc();
     while ((read = getline(&line, &len, fp)) != -1) {
     end = rdtsc();
-    printf("%dth\t the time cost for read a line %d\n",i++,end - start);
-    start = rdtsc();
+        printf("%dth\t the time cost for read a line %d\n",i++,end - start);
+        start = rdtsc();
     }
     if (line)
-    free(line);
+        free(line);
     exit(EXIT_SUCCESS);
 }
