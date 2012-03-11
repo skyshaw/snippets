@@ -8,3 +8,5 @@
 8. [python][re][wiki][io] autowiki.py
 9. [c][lua][call-c-from-lua] mylib.c
 10. [c][lua][c-api] stackDump.c
+11. [c][time][io] c_cpp/rl-test.c
+12. [shell][loop][variable] appendlines.sh
