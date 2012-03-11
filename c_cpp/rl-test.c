@@ -33,7 +33,7 @@ int main(void)
     int i=0;
     start = rdtsc();
     while ((read = getline(&line, &len, fp)) != -1) {
-    end = rdtsc();
+        end = rdtsc();
         printf("%dth\t the time cost for read a line %d\n",i++,end - start);
         start = rdtsc();
     }
