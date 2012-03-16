@@ -13,4 +13,5 @@
 13. [lua][c][interpreter][c-api] lua/stand-alone-lua-interpreter.c
 14. [lua][c][c-api][closure][upvalue] lua/tuple.c
 15. [lua][c][c-api][userdata] lua/array.c
-
+16. [lua][string][dot][io] lua/st2dot.lua
+17. [python][dot] st2dot.py
