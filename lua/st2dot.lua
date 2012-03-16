@@ -27,7 +27,7 @@ function st2dot(lines)
     header = e .. '(' .. header .. ')'
   end
   local label = '"' .. header .. ' |'
-  cnt = 0
+  local cnt = 0
   for i = 2, #lines - 1 do
     line = lines[i]:gsub(';', ''):gsub('{', ''):gsub('^%s*', ''):gsub('%s*$', '')
     if line ~= "" then 
