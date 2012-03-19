@@ -1,3 +1,4 @@
+#!/usr/bin/lua
 require "myio"
 function macro(line)
   if line:find("^%s*#define") then
@@ -34,8 +35,14 @@ function get_macros(path, out)
   f:close()
 end 
 
-local out = assert(io.open("out.macro", "w"))
-local allpath = myio.get_path_r("./macro");
+
+if #arg ~= 2 then
+    print("usage: getMacros.lua path output")
+    return
+end
+
+local out = assert(io.open(arg[2], "w"))
+local allpath = myio.get_path_r(arg[1]);
 for _, path in pairs(allpath) do
   get_macros(path, out)
 end

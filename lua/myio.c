@@ -16,33 +16,31 @@ static void error(lua_State *L) {
 static void traversal(lua_State *L, char *fullpath, DIR *dir, int *idx) {
     struct dirent *entry;
     struct stat statbuf;
+    char *ptr = fullpath + strlen(fullpath);
+    *ptr++ = '/';
+    chdir(fullpath);
     while ((entry = readdir(dir)) != NULL) {
         if (entry->d_name[0] == '.') continue;
         if (lstat(entry->d_name, &statbuf) == -1)
             error(L);
         if (S_ISREG(statbuf.st_mode)) {
-            char *ptr = fullpath + strlen(fullpath);
-            *ptr++ = '/';
             strcpy(ptr, entry->d_name);
             lua_pushnumber(L, (*idx)++);
             lua_pushstring(L, fullpath);
             lua_settable(L, -3);
-            *--ptr = '\0';
         } else if (S_ISDIR(statbuf.st_mode)) {
             DIR *subdir = opendir(entry->d_name);
             if (subdir == NULL)
                 error(L);
             if (chdir(entry->d_name) == -1)
                 error(L);
-            char *ptr = fullpath + strlen(fullpath);
-            *ptr++ = '/';
             strcpy(ptr, entry->d_name);
             traversal(L, fullpath, subdir, idx);
-            *--ptr = '\0';
             close(subdir);
-            chdir("..");
         } 
     }
+    *--ptr = '\0';
+    chdir("..");
 }
 
 static int l_get_path(lua_State *L) {
@@ -53,13 +51,13 @@ static int l_get_path(lua_State *L) {
     if (chdir(path) == -1)
         error(L);
     lua_newtable(L);
-    int idx = 1;
     const int max_len = 200;
     char fullpath[max_len];
     strcpy(fullpath, path);
+    int idx = 1;
     traversal(L, fullpath, dir, &idx);
     close(dir);
-    chdir("..");
+
     return 1;
 }
 
