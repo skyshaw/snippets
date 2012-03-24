@@ -19,5 +19,10 @@ count:
 minmax:
 	g++ $(ALGO)/minmax1.cpp -o $(BIN)/minmax.o
 
+.PHONY: find
+find:
+	g++ $(ALGO)/find1.cpp -o $(BIN)/find1.o
+	g++ $(ALGO)/find2.cpp -o $(BIN)/find2.o
+
 clean:
 	rm *.o
