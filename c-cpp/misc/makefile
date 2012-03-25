@@ -24,5 +24,9 @@ find:
 	g++ $(ALGO)/find1.cpp -o $(BIN)/find1.o
 	g++ $(ALGO)/find2.cpp -o $(BIN)/find2.o
 
+.PHONY: searchn
+searchn:
+	g++ $(ALGO)/searchn1.cpp -o $(BIN)/searchn1.o
+
 clean:
 	rm *.o

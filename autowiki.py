@@ -8,7 +8,7 @@ def get_item_lists(filename):
         line = f.readline()
         if not line:
             break
-        m = re.match(r'#\s+\[\[\./(.+)\.html\|.+\]\]', line)
+        m = re.match(r'#\s+\[\[\./(.+)\|.+\]\]', line)
         if m is not None:
             item_list.append(m.group(1))
     f.close()
@@ -23,8 +23,10 @@ def add_links():
             f = open(item, 'r')
             title = f.readline()
             m = re.match(r'=+([^=]+)=+', title)
+            if m is None:
+                continue
             print m.group(1)
-            index_page.write('# [[./' + item[:-5] + '.html|' + m.group(1) + ']]\n')
+            index_page.write('# [[./' + item[:-5] + '|' + m.group(1) + ']]\n')
             f.close()
     index_page.close()
 

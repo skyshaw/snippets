@@ -42,12 +42,12 @@ def st2dot(lines):
     end = end.lstrip('}').rstrip(';').strip()
     if end:
         header = end + '(' + header + ')'
-    label = '"' + header + ' |'
+    label = '"<n> ' + header
     cnt = 0
     for line in lines[1:-1]:
         line = line.strip(';').strip('{').strip('')
         if line:
-            label += ' f<%d> %s\\l |' % (cnt, line)
+            label += ' | <f%d> %s\\l' % (cnt, line)
             cnt += 1
     return label + '"'
     
