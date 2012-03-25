@@ -28,5 +28,10 @@ find:
 searchn:
 	g++ $(ALGO)/searchn1.cpp -o $(BIN)/searchn1.o
 
+.PHONY: search
+search:
+	g++ $(ALGO)/search1.cpp -o $(BIN)/search1.o
+	g++ $(ALGO)/search2.cpp -o $(BIN)/search2.o
+
 clean:
 	rm *.o
