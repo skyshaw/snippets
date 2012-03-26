@@ -33,5 +33,9 @@ search:
 	g++ $(ALGO)/search1.cpp -o $(BIN)/search1.o
 	g++ $(ALGO)/search2.cpp -o $(BIN)/search2.o
 
+.PHONY: findend
+findend:
+	g++ $(ALGO)/findend1.cpp -o $(BIN)/findend1.o
+
 clean:
 	rm *.o
