@@ -37,5 +37,9 @@ search:
 findend:
 	g++ $(ALGO)/findend1.cpp -o $(BIN)/findend1.o
 
+.PHONY: findof
+findof:
+	g++ $(ALGO)/findof1.cpp -o $(BIN)/findof1.o
+
 clean:
 	rm *.o
