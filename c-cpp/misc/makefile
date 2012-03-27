@@ -45,5 +45,9 @@ findof:
 adjfind:
 	g++ $(ALGO)/adjfind1.cpp -o $(BIN)/adjfind.o
 
+.PHONY: equal
+equal:
+	g++ $(ALGO)/equal1.cpp -o $(BIN)/equal.o
+
 clean:
 	rm *.o
