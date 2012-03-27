@@ -41,5 +41,9 @@ findend:
 findof:
 	g++ $(ALGO)/findof1.cpp -o $(BIN)/findof1.o
 
+.PHONY: adjfind
+adjfind:
+	g++ $(ALGO)/adjfind1.cpp -o $(BIN)/adjfind.o
+
 clean:
 	rm *.o
