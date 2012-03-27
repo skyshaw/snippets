@@ -1,5 +1,7 @@
 ALGO=./algo
+BOOST=./boost
 BIN=./bin
+INCLUDE=/home/skyshaw/Documents/lib/boost/include
 
 .PHONY: all
 all:
@@ -48,6 +50,10 @@ adjfind:
 .PHONY: equal
 equal:
 	g++ $(ALGO)/equal1.cpp -o $(BIN)/equal.o
+
+.PHONY: timer
+timer:
+	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
 
 clean:
 	rm *.o
