@@ -1,31 +1,36 @@
 #-*- coding:utf-8 -*-
-import urllib2, sys, re, urllib
+import urllib2
+import sys
+import re
+import urllib
+
 def get_page(url):
     try:
-        fileHandle = urllib2.urlopen(url)
-        string = fileHandle.read()
-        fileHandle.close()
+        file_handle = urllib2.urlopen(url)
+        string = file_handle.read()
+        file_handle.close()
     except IOError:
         print 'Cannot open URL %s for reading' % url
         string = ''
     return string
 
-
 def get_file_name(url):
-    return url[url.rfind('/') + 1 : ]
+    return url[url.rfind('/') + 1:]
 
 def get_extension_name(url):
-    return url[url.rfind('.') : ]
+    return url[url.rfind('.'):]
 
 def get_images(url):
     string = get_page(url)
     regular = r'<img([ ]*)src="(.*?)"(.*)/>'
-    li = re.findall(regular, string)
+    links = re.findall(regular, string)
     num = 0
-    for img_link in li:
+    for img_link in links:
         try:
-            urllib.urlretrieve(img_link[1], str(num) + get_extension_name(img_link[1]))
-            print  "%s --> %s finished" % (img_link[1], str(num) + get_extension_name(img_link[1]))
+            urllib.urlretrieve(
+                img_link[1], str(num) + get_extension_name(img_link[1]))
+            print  "%s --> %s finished" % (
+                img_link[1], str(num) + get_extension_name(img_link[1]))
             num += 1
         except IOError:
             print "%s download failed" % img_link[1]
