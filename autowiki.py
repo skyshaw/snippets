@@ -18,7 +18,7 @@ def add_links():
     item_list = get_item_lists("index.wiki")
     index_page = open("index.wiki", 'a')
     for item in os.listdir("."):
-        if (not os.path.isdir(item)) and (item != "index.wiki") and \
+        if (os.path.isfile(item)) and (item != "index.wiki") and \
             (item.endswith(".wiki")) and (item[:-5] not in item_list):
             f = open(item, 'r')
             title = f.readline()
