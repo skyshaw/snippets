@@ -51,9 +51,21 @@ adjfind:
 equal:
 	g++ $(ALGO)/equal1.cpp -o $(BIN)/equal.o
 
+.PHONY: mismatch
+mismatch:
+	g++ $(ALGO)/mismatch1.cpp -o $(BIN)/mismatch.o
+
+.PHONY:
+lexico:
+	g++ $(ALGO)/lexico1.cpp -o $(BIN)/lexico.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
+
+.PHONY:
+progress:
+	g++ $(BOOST)/progress.cpp -o $(BIN)/progress.o -I$(INCLUDE)
 
 clean:
 	rm *.o
