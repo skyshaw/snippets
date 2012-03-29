@@ -59,6 +59,12 @@ mismatch:
 lexico:
 	g++ $(ALGO)/lexico1.cpp -o $(BIN)/lexico.o
 
+.PHONY:
+copy:
+	g++ $(ALGO)/copy1.cpp -o $(BIN)/copy1.o
+	g++ $(ALGO)/copy2.cpp -o $(BIN)/copy2.o
+	g++ $(ALGO)/copy3.cpp -o $(BIN)/copy3.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
