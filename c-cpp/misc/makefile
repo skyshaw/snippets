@@ -65,6 +65,11 @@ copy:
 	g++ $(ALGO)/copy2.cpp -o $(BIN)/copy2.o
 	g++ $(ALGO)/copy3.cpp -o $(BIN)/copy3.o
 
+.PHONY:
+transform:
+	g++ $(ALGO)/transform1.cpp -o $(BIN)/transform1.o
+	g++ $(ALGO)/transform2.cpp -o $(BIN)/transform2.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
