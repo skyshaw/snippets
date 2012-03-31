@@ -85,5 +85,13 @@ timer:
 progress:
 	g++ $(BOOST)/progress.cpp -o $(BIN)/progress.o -I$(INCLUDE)
 
+.PHONY:
+new_progress:
+	g++ $(BOOST)/new_progress_timer.cpp -o $(BIN)/new_progross_timer.o -I$(INCLUDE)
+
+.PHONY:
+progress_display:
+	g++ $(BOOST)/progress_display.cpp -o $(BIN)/pd.o -I$(INCLUDE)
+
 clean:
 	rm *.o
