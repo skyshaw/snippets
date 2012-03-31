@@ -70,6 +70,13 @@ transform:
 	g++ $(ALGO)/transform1.cpp -o $(BIN)/transform1.o
 	g++ $(ALGO)/transform2.cpp -o $(BIN)/transform2.o
 
+.PHONY:
+swap:
+	g++ $(ALGO)/swap1.cpp -o $(BIN)/swap1.o
+
+.PHONY:
+fill:
+	g++ $(ALGO)/fill1.cpp -o $(BIN)/fill.o
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
