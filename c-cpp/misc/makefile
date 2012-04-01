@@ -82,6 +82,14 @@ fill:
 generate:
 	g++ $(ALGO)/gen1.cpp -o $(BIN)/gen.o
 
+.PHONY:
+replace:
+	g++ $(ALGO)/replace.cpp -o $(BIN)/replace.o
+
+.PHONY:
+replace_copy:
+	g++ $(ALGO)/replace_copy.cpp -o $(BIN)/replace_copy.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
