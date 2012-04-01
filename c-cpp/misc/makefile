@@ -77,6 +77,11 @@ swap:
 .PHONY:
 fill:
 	g++ $(ALGO)/fill1.cpp -o $(BIN)/fill.o
+
+.PHONY:
+generate:
+	g++ $(ALGO)/gen1.cpp -o $(BIN)/gen.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
@@ -92,6 +97,7 @@ new_progress:
 .PHONY:
 progress_display:
 	g++ $(BOOST)/progress_display.cpp -o $(BIN)/pd.o -I$(INCLUDE)
+
 
 clean:
 	rm *.o
