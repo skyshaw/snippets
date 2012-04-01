@@ -106,6 +106,9 @@ new_progress:
 progress_display:
 	g++ $(BOOST)/progress_display.cpp -o $(BIN)/pd.o -I$(INCLUDE)
 
+.PHONY:
+result_of:
+	g++ $(BOOST)/result_of.cpp -o $(BIN)/result_of.o -I$(INCLUDE) --std=c++0x
 
 clean:
 	rm *.o
