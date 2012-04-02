@@ -124,5 +124,9 @@ result_of:
 bind:
 	g++ $(BOOST)/bind.cpp -o $(BIN)/bind.o -I$(INCLUDE)
 
+.PHONY:
+function:
+	g++ $(BOOST)/function.cpp -o $(BIN)/function.o -I$(INCLUDE)
+
 clean:
 	rm *.o
