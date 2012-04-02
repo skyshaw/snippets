@@ -87,6 +87,16 @@ replace:
 	g++ $(ALGO)/replace.cpp -o $(BIN)/replace.o
 
 .PHONY:
+remove:
+	g++ $(ALGO)/remove.cpp -o $(BIN)/remove.o
+
+.PHONY:
+remove_copy:
+	g++ $(ALGO)/remove_copy.cpp -o $(BIN)/remove_copy.o
+
+
+
+.PHONY:
 replace_copy:
 	g++ $(ALGO)/replace_copy.cpp -o $(BIN)/replace_copy.o
 
