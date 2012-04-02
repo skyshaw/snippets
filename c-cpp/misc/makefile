@@ -120,5 +120,9 @@ progress_display:
 result_of:
 	g++ $(BOOST)/result_of.cpp -o $(BIN)/result_of.o -I$(INCLUDE) --std=c++0x
 
+.PHONY:
+bind:
+	g++ $(BOOST)/bind.cpp -o $(BIN)/bind.o -I$(INCLUDE)
+
 clean:
 	rm *.o
