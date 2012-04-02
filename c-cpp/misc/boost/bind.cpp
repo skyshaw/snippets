@@ -1,7 +1,11 @@
 #include <iostream>
+#include <iterator>
 #include <vector>
 #include <algorithm>
 #include <boost/bind.hpp>
+#include <utility>
+#include <functional>
+#include <string>
 
 
 using namespace std;
@@ -51,5 +55,20 @@ int main() {
 
   vector<point> v(10);
   for_each(v.begin(), v.end(), bind(&point::print, _1));
+
+  vector<int> v2(10);
+  transform(v.begin(), v.end(), ostream_iterator<int>(cout, " "),
+            bind(&point::x, _1));
+  cout << endl;
+
+  typedef pair<int, string> pair_t;
+  pair_t p(123, "string");
+  cout << bind(&pair_t::first, p)() << endl;
+  cout << bind(&pair_t::second, p)() << endl;
+
+  cout << bind(greater<int>(), _1, _2)(x, y) << endl;
+  cout << bind(plus<int>(), _1, _2)(x, y) << endl;
+  cout << bind(modulus<int>(), _1, _2)(x, y) << endl;
+
   return 0;
 }
