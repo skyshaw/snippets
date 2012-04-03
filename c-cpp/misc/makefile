@@ -100,6 +100,12 @@ remove_copy:
 replace_copy:
 	g++ $(ALGO)/replace_copy.cpp -o $(BIN)/replace_copy.o
 
+.PHONY:
+unique:
+	g++ $(ALGO)/unique.cpp -o $(BIN)/unique.o
+	g++ $(ALGO)/unique2.cpp -o $(BIN)/unique2.o
+	g++ $(ALGO)/unique3.cpp -o $(BIN)/unique3.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
