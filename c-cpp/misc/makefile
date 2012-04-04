@@ -106,6 +106,10 @@ unique:
 	g++ $(ALGO)/unique2.cpp -o $(BIN)/unique2.o
 	g++ $(ALGO)/unique3.cpp -o $(BIN)/unique3.o
 
+.PHONY:
+reverse:
+	g++ $(ALGO)/reverse.cpp -o $(BIN)/reverse.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
@@ -133,6 +137,10 @@ bind:
 .PHONY:
 function:
 	g++ $(BOOST)/function.cpp -o $(BIN)/function.o -I$(INCLUDE)
+
+.PHONY:
+signal:
+	g++ $(BOOST)/signal.cpp -o $(BIN)/signal.o -I$(INCLUDE)
 
 clean:
 	rm *.o
