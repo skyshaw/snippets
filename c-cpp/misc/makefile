@@ -115,6 +115,10 @@ rotate:
 	g++ $(ALGO)/rotate.cpp -o $(BIN)/rotate.o
 	g++ $(ALGO)/rotate_copy.cpp -o $(BIN)/rotate_copy.o
 
+.PHONY:
+permutation:
+	g++ $(ALGO)/permutation.cpp -o $(BIN)/permutation.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
