@@ -25,21 +25,35 @@ def get_item_lists(filename):
 
 
 def add_links():
+#    item_list = get_item_lists("index.wiki")
+#    index_page = open("index.wiki", 'a')
+#    for item in os.listdir("."):
+#        if (os.path.isfile(item)) and (item != "index.wiki") and \
+#            (item.endswith(".wiki")) and (item[:-5] not in item_list):
+#            file_ = open(item, 'r')
+#            line = file_.readline()
+#            title = re.match(r'=+\s*([^=\s]+)\s*=+', line)
+#            if title is None:
+#                continue
+#            print title.group(1)
+#            index_page.write('# [[./' + item[:-5] + '|'
+#                             + title.group(1) + ']]\n')
+#            file_.close()
+#    index_page.close()
+
     item_list = get_item_lists("index.wiki")
-    index_page = open("index.wiki", 'a')
-    for item in os.listdir("."):
-        if (os.path.isfile(item)) and (item != "index.wiki") and \
-            (item.endswith(".wiki")) and (item[:-5] not in item_list):
-            file_ = open(item, 'r')
-            line = file_.readline()
-            title = re.match(r'=+\s*([^=\s]+)\s*=+', line)
-            if title is None:
-                continue
-            print title.group(1)
-            index_page.write('# [[./' + item[:-5] + '|'
-                             + title.group(1) + ']]\n')
-            file_.close()
-    index_page.close()
+    with open("index.wiki", 'a') as index_page:
+        for item in os.listdir("."):
+            if (os.path.isfile(item)) and (item != "index.wiki") and \
+                (item.endswith(".wiki")) and (item[:-5] not in item_list):
+                with open(item, 'r') as file_:
+                    line = file_.readline()
+                    title = re.match(r'=+\s*([^=\s]+)\s*=+', line)
+                    if title is None:
+                        continue
+                    print title.group(1)
+                    index_page.write('# [[./' + item[:-5] + '|'
+                                     + title.group(1) + ']]\n')
 
 if __name__ == "__main__":
     add_links()
