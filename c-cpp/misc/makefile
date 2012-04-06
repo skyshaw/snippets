@@ -119,6 +119,10 @@ rotate:
 permutation:
 	g++ $(ALGO)/permutation.cpp -o $(BIN)/permutation.o
 
+.PHONY:
+shuffle:
+	g++ $(ALGO)/shuffle.cpp -o $(BIN)/shuffle.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
