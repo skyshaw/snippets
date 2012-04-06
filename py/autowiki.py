@@ -2,17 +2,27 @@ import os
 import re
 
 def get_item_lists(filename):
-    file_ = open(filename, "r")
-    item_list = []
-    while True:
-        line = file_.readline()
-        if not line:
-            break
-        title = re.match(r'#\s+\[\[\./(.+)\|.+\]\]', line)
-        if title is not None:
-            item_list.append(title.group(1))
-    file_.close()
+#    file_ = open(filename, "r")
+#    item_list = []
+#    while True:
+#        line = file_.readline()
+#        if not line:
+#            break
+#        title = re.match(r'#\s+\[\[\./(.+)\|.+\]\]', line)
+#        if title is not None:
+#            item_list.append(title.group(1))
+#    file_.close()
+#    return item_list
+
+    #It's safe, __exit__ of file object will close the file
+    with open(filename, "r") as f: 
+        item_list = []
+        for line in f:
+            title = re.match(r'#\s+\[\[\./(.+)\|.+\]\]', line)
+            if title is not None:
+                item_list.append(title.group(1))
     return item_list
+
 
 def add_links():
     item_list = get_item_lists("index.wiki")
@@ -22,7 +32,7 @@ def add_links():
             (item.endswith(".wiki")) and (item[:-5] not in item_list):
             file_ = open(item, 'r')
             line = file_.readline()
-            title = re.match(r'=+([^=]+)=+', line)
+            title = re.match(r'=+\s*([^=\s]+)\s*=+', line)
             if title is None:
                 continue
             print title.group(1)
