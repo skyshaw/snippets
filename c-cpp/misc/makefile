@@ -155,5 +155,9 @@ function:
 signal:
 	g++ $(BOOST)/signal.cpp -o $(BIN)/signal.o -I$(INCLUDE)
 
+.PHONY:
+assign:
+	g++ $(BOOST)/assign.cc -o $(BIN)/assign.o 
+
 clean:
 	rm *.o
