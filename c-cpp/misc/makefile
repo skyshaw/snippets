@@ -123,6 +123,10 @@ permutation:
 shuffle:
 	g++ $(ALGO)/shuffle.cpp -o $(BIN)/shuffle.o
 
+.PHONY:
+partition:
+	g++ $(ALGO)/partition.cc -o $(BIN)/partition.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
