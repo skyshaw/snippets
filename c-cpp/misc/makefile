@@ -127,6 +127,11 @@ shuffle:
 partition:
 	g++ $(ALGO)/partition.cc -o $(BIN)/partition.o
 
+.PHONY:
+sort:
+	g++ $(ALGO)/sort1.cpp -o $(BIN)/sort1.o
+	g++ $(ALGO)/sort2.cpp -o $(BIN)/sort2.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
