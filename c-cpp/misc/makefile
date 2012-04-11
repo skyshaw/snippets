@@ -137,6 +137,10 @@ partial_sort:
 	g++ $(ALGO)/partial_sort1.cc -o $(BIN)/partial_sort1.o
 	g++ $(ALGO)/partial_sort2.cc -o $(BIN)/partial_sort2.o
 
+.PHONY:
+nth_element:
+	g++ $(ALGO)/nth_element.cc -o $(BIN)/nth_element.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
