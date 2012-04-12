@@ -1,3 +1,4 @@
 lua/.clang_complete
 *.so
 *.o
+*.swp

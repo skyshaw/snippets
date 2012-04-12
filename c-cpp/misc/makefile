@@ -11,8 +11,7 @@ all:
 foreach:
 	g++ $(ALGO)/foreach1.cpp -o $(BIN)/foreach1.o
 	g++ $(ALGO)/foreach2.cpp -o $(BIN)/foreach2.o
-	g++ $(ALGO)/foreach3.cpp -o $(BIN)/foreach3.o
-
+	g++ $(ALGO)/foreach3.cpp -o $(BIN)/foreach3.o 
 .PHONY: count
 count:
 	g++ $(ALGO)/count1.cpp -o $(BIN)/count.o
@@ -140,6 +139,10 @@ partial_sort:
 .PHONY:
 nth_element:
 	g++ $(ALGO)/nth_element.cc -o $(BIN)/nth_element.o
+
+.PHONY:
+heap:
+	g++ $(ALGO)/heap1.cc -o $(BIN)/heap1.o
 
 .PHONY: timer
 timer:
