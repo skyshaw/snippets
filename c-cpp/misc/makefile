@@ -144,6 +144,14 @@ nth_element:
 heap:
 	g++ $(ALGO)/heap1.cc -o $(BIN)/heap1.o
 
+.PHONY:
+bsearch:
+	g++ $(ALGO)/bsearch1.cc -o $(BIN)/bsearch.o
+
+.PHONY:
+includes:
+	g++ $(ALGO)/includes1.cc -o$(BIN)/includes.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
