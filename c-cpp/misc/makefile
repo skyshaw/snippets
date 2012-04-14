@@ -150,7 +150,11 @@ bsearch:
 
 .PHONY:
 includes:
-	g++ $(ALGO)/includes1.cc -o$(BIN)/includes.o
+	g++ $(ALGO)/includes1.cc -o $(BIN)/includes.o
+
+.PHONY:
+bound:
+	g++ $(ALGO)/bound1.cc -o $(BIN)/bound1.o
 
 .PHONY: timer
 timer:
