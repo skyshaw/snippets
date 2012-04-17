@@ -156,9 +156,14 @@ includes:
 bound:
 	g++ $(ALGO)/bound1.cc -o $(BIN)/bound1.o
 
+
 .PHONY:
 equal_range:
 	g++ $(ALGO)/equal_range1.cc -o $(BIN)/equal_range1.o
+
+.PHONY:
+merge:
+	g++ $(ALGO)/merge.cc -o $(BIN)/merge.o
 
 .PHONY: timer
 timer:
