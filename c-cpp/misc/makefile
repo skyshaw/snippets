@@ -201,5 +201,9 @@ signal:
 assign:
 	g++ $(BOOST)/assign.cc -o $(BIN)/assign.o 
 
+.PHONY:
+minimal-test:
+	g++ $(BOOST)/minimal-test.cc -o $(BIN)/minimal-test.o
+
 clean:
 	rm *.o
