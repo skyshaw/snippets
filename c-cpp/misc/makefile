@@ -165,6 +165,10 @@ equal_range:
 merge:
 	g++ $(ALGO)/merge.cc -o $(BIN)/merge.o
 
+.PHONY:
+setalgos:
+	g++ $(ALGO)/setalgos.cc -o $(BIN)/setalgos.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
