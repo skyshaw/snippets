@@ -169,6 +169,10 @@ merge:
 setalgos:
 	g++ $(ALGO)/setalgos.cc -o $(BIN)/setalgos.o
 
+.PHONY:
+inplace-merge:
+	g++ $(ALGO)/inplace-merge.cc -o $(BIN)/inplace-merge.o
+
 .PHONY: timer
 timer:
 	g++ $(BOOST)/timer.cpp -o $(BIN)/timer.o -I$(INCLUDE)
