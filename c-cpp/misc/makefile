@@ -156,9 +156,22 @@ includes:
 bound:
 	g++ $(ALGO)/bound1.cc -o $(BIN)/bound1.o
 
+
 .PHONY:
 equal_range:
 	g++ $(ALGO)/equal_range1.cc -o $(BIN)/equal_range1.o
+
+.PHONY:
+merge:
+	g++ $(ALGO)/merge.cc -o $(BIN)/merge.o
+
+.PHONY:
+setalgos:
+	g++ $(ALGO)/setalgos.cc -o $(BIN)/setalgos.o
+
+.PHONY:
+inplace-merge:
+	g++ $(ALGO)/inplace-merge.cc -o $(BIN)/inplace-merge.o
 
 .PHONY: timer
 timer:
@@ -195,6 +208,10 @@ signal:
 .PHONY:
 assign:
 	g++ $(BOOST)/assign.cc -o $(BIN)/assign.o 
+
+.PHONY:
+minimal-test:
+	g++ $(BOOST)/minimal-test.cc -o $(BIN)/minimal-test.o
 
 clean:
 	rm *.o
