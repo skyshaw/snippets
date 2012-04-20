@@ -22,16 +22,16 @@ class Post(object):
     def get_posts(self):
         for single_date in date_range(self.beg_time, self.end_time):
             try:
-                print single_date
-                page = urllib2.urlopen(self.url + single_date.strftime("/%Y/%m/%d/"), None, 1)
+                page = urllib2.urlopen(self.url + single_date.strftime("/%Y/%m/%d/"))
                 content = page.read()
                 page.close()
                 d = pq(content)
-                href = d(".postTitle").find('h4').find('a').attr('href')
-                title = d(".postTitle").find('h4').find('a').attr('title')
+                href = d(".postTitle").find('h4').find('a').attr('href').encode('utf-8')
+                title = d(".postTitle").find('h4').find('a').attr('title').encode('utf-8')
                 if href and title:
                     self.posts[title] = href 
-                    print title, href
+                    print single_date, title, href
+                    sys.stdout.flush()
             except IOError:
                 pass
 
@@ -41,7 +41,7 @@ class Post(object):
 
 def main(argv=None):
     p = Post("http://blog.youxu.info/",
-             datetime.date(2008, 1, 1), 
+             datetime.date(2005, 11, 1), 
              datetime.date(2012, 4, 20)) 
     p.get_posts()
     p.prt_posts()
