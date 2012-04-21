@@ -4,7 +4,24 @@ import urllib2
 import datetime
 import re
 import sys
+import os
+import signal
+import code
+import traceback
 from pyquery import PyQuery as pq
+
+
+def debug(sig, frame):
+    """Interrupt running process, and provide a python prompt for
+    interactive debugging."""
+    d = {'_frame': frame}         # Allow access to frame object.
+    d.update(frame.f_globals)  # Unless shadowed by global
+    d.update(frame.f_locals)
+
+    i = code.InteractiveConsole(d)
+    message  = "Signal recieved : entering python shell.\nTraceback:\n"
+    message += ''.join(traceback.format_stack(frame))
+    i.interact(message)
 
 def date_range(begin_date, end_date):
     for n in range((end_date - begin_date).days):
@@ -48,4 +65,5 @@ def main(argv=None):
     return 0
 
 if __name__ == "__main__":
+    signal.signal(signal.SIGALRM, debug)
     sys.exit(main())

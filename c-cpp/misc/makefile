@@ -173,8 +173,25 @@ setalgos:
 inplace-merge:
 	g++ $(ALGO)/inplace-merge.cc -o $(BIN)/inplace-merge.o
 
+.PHONY:
 accumulate:
 	g++ $(ALGO)/accumulate.cc -o $(BIN)/accumulate.o
+
+.PHONY:
+inner_product:
+	g++ $(ALGO)/inner_product.cc -o $(BIN)/inner_product.o
+
+.PHONY:
+partial_sum:
+	g++ $(ALGO)/partial_sum.cc -o $(BIN)/partial_sum.o
+
+.PHONY:
+adj_diff:
+	g++ $(ALGO)/adj_diff.cc -o $(BIN)/adj_diff.o
+
+.PHONY:
+relabs:
+	g++ $(ALGO)/relabs.cc -o $(BIN)/relabs.o
 
 .PHONY: timer
 timer:
