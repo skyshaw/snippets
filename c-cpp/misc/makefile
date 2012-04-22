@@ -1,4 +1,5 @@
 ALGO=./algo
+FUNCTOR=./functor
 BOOST=./boost
 BIN=./bin
 INCLUDE=/home/skyshaw/Documents/lib/boost/include
@@ -192,6 +193,10 @@ adj_diff:
 .PHONY:
 relabs:
 	g++ $(ALGO)/relabs.cc -o $(BIN)/relabs.o
+
+.PHONY:
+genera:
+	g++ $(FUNCTOR)/genera1.cpp -o $(BIN)/genera.o
 
 .PHONY: timer
 timer:
