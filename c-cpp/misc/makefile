@@ -196,7 +196,10 @@ relabs:
 
 .PHONY:
 genera:
-	g++ $(FUNCTOR)/genera1.cpp -o $(BIN)/genera.o
+	g++ $(FUNCTOR)/genera1.cpp -o $(BIN)/genera1.o
+	g++ $(FUNCTOR)/genera2.cc -o $(BIN)/genera2.o
+
+
 
 .PHONY: timer
 timer:
