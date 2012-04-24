@@ -3,4 +3,6 @@ lua/.clang_complete
 *.o
 *.swp
 *.clang_complete
+lex-yacc/ccpp/bin/
+
 
