@@ -199,6 +199,10 @@ genera:
 	g++ $(FUNCTOR)/genera1.cpp -o $(BIN)/genera1.o
 	g++ $(FUNCTOR)/genera2.cc -o $(BIN)/genera2.o
 
+.PHONY:
+foreach_mv:
+	g++ $(FUNCTOR)/foreach.cc -o $(BIN)/foreach.o
+
 
 
 .PHONY: timer

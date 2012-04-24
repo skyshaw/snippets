@@ -2,3 +2,5 @@ lua/.clang_complete
 *.so
 *.o
 *.swp
+*.clang_complete
+
