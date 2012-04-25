@@ -203,6 +203,10 @@ genera:
 foreach_mv:
 	g++ $(FUNCTOR)/foreach.cc -o $(BIN)/foreach.o
 
+.PHONY:
+removeif:
+	g++ $(FUNCTOR)/removeif.cc -o $(BIN)/removeif.o
+
 
 
 .PHONY: timer
