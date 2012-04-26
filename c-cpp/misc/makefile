@@ -207,6 +207,10 @@ foreach_mv:
 removeif:
 	g++ $(FUNCTOR)/removeif.cc -o $(BIN)/removeif.o
 
+.PHONY:
+memfun:
+	g++ $(FUNCTOR)/memfun1a.cc -o $(BIN)/memfun1a.o
+
 
 
 .PHONY: timer
