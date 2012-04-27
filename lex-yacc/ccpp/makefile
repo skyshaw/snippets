@@ -16,6 +16,11 @@ BISON=bison
 	$(GCC) $(BIN)/2_24.c -o $(BIN)/2_24.o -lfl #use default yywrap in library fl
 
 .PHONY:
+5_30:
+	$(BISON) -d $(SRC)/5_30.y -o $(BIN)/5_30.c
+	$(GCC) $(BIN)/5_30.c -o $(BIN)/5_30.o $(CFLAGS)
+
+.PHONY:
 calc:
 	$(GCC) -g $(SRC)/calc.c -o $(BIN)/calc.o $(CFLAGS)
 
