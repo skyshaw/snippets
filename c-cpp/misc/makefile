@@ -211,6 +211,10 @@ removeif:
 memfun:
 	g++ $(FUNCTOR)/memfun1a.cc -o $(BIN)/memfun1a.o
 
+.PHONY:
+fopow:
+	g++ $(FUNCTOR)/fopow1.cc -o $(BIN)/fopow1.o
+
 
 
 .PHONY: timer
