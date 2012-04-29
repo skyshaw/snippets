@@ -1,6 +1,7 @@
 ALGO=./algo
 FUNCTOR=./functor
 BOOST=./boost
+CPP11=./c++11
 BIN=./bin
 INCLUDE=/home/skyshaw/Documents/lib/boost/include
 
@@ -256,6 +257,14 @@ assign:
 .PHONY:
 minimal-test:
 	g++ $(BOOST)/minimal-test.cc -o $(BIN)/minimal-test.o
+
+.PHONY:
+auto:
+	g++ $(CPP11)/auto1.cc -o $(BIN)/auto1.o --std=c++0x
+
+.PHONY:
+range:
+	g++ $(CPP11)/range-for.cc -o $(BIN)/range-for.o --std=c++0x
 
 clean:
 	rm *.o
