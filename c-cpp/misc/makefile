@@ -270,5 +270,9 @@ range:
 lambda:
 	g++ $(CPP11)/lambda1.cc -o $(BIN)/lambda.o  -std=c++0x
 
+.PHONY:
+of:
+	g++  $(CPP11)/of1.cc -o $(BIN)/of.o -std=c++0x
+
 clean:
 	rm *.o
