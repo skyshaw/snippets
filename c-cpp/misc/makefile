@@ -236,7 +236,7 @@ progress_display:
 
 .PHONY:
 result_of:
-	g++ $(BOOST)/result_of.cpp -o $(BIN)/result_of.o -I$(INCLUDE) --std=c++0x
+	g++ $(BOOST)/result_of.cpp -o $(BIN)/result_of.o -I$(INCLUDE) -std=c++0x
 
 .PHONY:
 bind:
@@ -260,11 +260,15 @@ minimal-test:
 
 .PHONY:
 auto:
-	g++ $(CPP11)/auto1.cc -o $(BIN)/auto1.o --std=c++0x
+	g++ $(CPP11)/auto1.cc -o $(BIN)/auto1.o -std=c++0x
 
 .PHONY:
 range:
-	g++ $(CPP11)/range-for.cc -o $(BIN)/range-for.o --std=c++0x
+	g++ $(CPP11)/range-for.cc -o $(BIN)/range-for.o -std=c++0x
+
+.PHONY:
+lambda:
+	g++ $(CPP11)/lambda1.cc -o $(BIN)/lambda.o  -std=c++0x
 
 clean:
 	rm *.o
