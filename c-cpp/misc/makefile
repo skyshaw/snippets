@@ -274,5 +274,9 @@ lambda:
 of:
 	g++  $(CPP11)/of1.cc -o $(BIN)/of.o -std=c++0x
 
+.PHONY:
+map:
+	g++  $(CPP11)/map1.cc -o $(BIN)/map.o -std=c++0x
+
 clean:
 	rm *.o
