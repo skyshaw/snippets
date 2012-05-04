@@ -278,5 +278,9 @@ of:
 map:
 	g++  $(CPP11)/map1.cc -o $(BIN)/map.o -std=c++0x
 
+.PHONY:
+thread:
+	g++ $(CPP11)/thread1.cc -o $(BIN)/thread.o -std=c++0x -lpthread
+
 clean:
 	rm *.o
