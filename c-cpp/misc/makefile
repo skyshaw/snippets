@@ -282,5 +282,9 @@ map:
 thread:
 	g++ $(CPP11)/thread1.cc -o $(BIN)/thread.o -std=c++0x -lpthread
 
+.PHONY:
+chrono:
+	g++ $(CPP11)/chrono.cc -o $(BIN)/chrono.o -std=c++0x
+
 clean:
 	rm *.o
