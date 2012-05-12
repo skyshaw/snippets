@@ -268,7 +268,8 @@ range:
 
 .PHONY:
 lambda:
-	g++ $(CPP11)/lambda1.cc -o $(BIN)/lambda.o  -std=c++0x
+	g++ $(CPP11)/lambda1.cc -o $(BIN)/lambda1.o -std=c++0x
+	g++ $(CPP11)/lambda2.cc -o $(BIN)/lambda2.o -std=c++0x
 
 .PHONY:
 of:
