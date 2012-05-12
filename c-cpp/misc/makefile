@@ -280,7 +280,9 @@ map:
 
 .PHONY:
 thread:
-	g++ $(CPP11)/thread1.cc -o $(BIN)/thread.o -std=c++0x -lpthread
+	g++ $(CPP11)/thread1.cc -o $(BIN)/thread1.o -std=c++0x -lpthread
+	g++ $(CPP11)/thread2.cc -o $(BIN)/thread2.o -std=c++0x -lpthread
+	g++ $(CPP11)/thread3.cc -o $(BIN)/thread3.o -std=c++0x -lpthread
 
 .PHONY:
 chrono:
