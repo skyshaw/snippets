@@ -4,5 +4,6 @@ lua/.clang_complete
 *.swp
 *.clang_complete
 lex-yacc/ccpp/bin/
+c-cpp/misc/bin/
 
 

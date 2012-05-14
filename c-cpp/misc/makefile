@@ -289,5 +289,11 @@ thread:
 chrono:
 	g++ $(CPP11)/chrono.cc -o $(BIN)/chrono.o -std=c++0x
 
+.PHONY:
+regex:
+	g++ $(CPP11)/regex1.cc -o $(BIN)/regex1.o -std=c++0x
+	g++ $(CPP11)/regex2.cc -o $(BIN)/regex2.o -std=c++0x
+	g++ $(CPP11)/regex3.cc -o $(BIN)/regex3.o -std=c++0x
+
 clean:
 	rm *.o
