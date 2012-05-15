@@ -295,5 +295,9 @@ regex:
 	g++ $(CPP11)/regex2.cc -o $(BIN)/regex2.o -std=c++0x
 	g++ $(CPP11)/regex3.cc -o $(BIN)/regex3.o -std=c++0x
 
+.PHONY:
+raw-string:
+	g++ $(CPP11)/raw-string.cc -o $(BIN)/raw-string.o -std=c++0x
+
 clean:
 	rm *.o
