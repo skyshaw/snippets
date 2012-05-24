@@ -299,5 +299,9 @@ regex:
 raw-string:
 	g++ $(CPP11)/raw-string.cc -o $(BIN)/raw-string.o -std=c++0x
 
+.PHONY:
+async:
+	g++ $(CPP11)/async.cc -o $(BIN)/async.o  -std=c++0x -lpthread
+
 clean:
 	rm *.o
