@@ -259,6 +259,10 @@ minimal-test:
 	g++ $(BOOST)/minimal-test.cc -o $(BIN)/minimal-test.o
 
 .PHONY:
+has_trivial_copy:
+	g++ $(BOOST)/has_trivial_copy.cc -o $(BIN)/has_trivial_copy.o -std=c++0x
+
+.PHONY:
 auto:
 	g++ $(CPP11)/auto1.cc -o $(BIN)/auto1.o -std=c++0x
 
