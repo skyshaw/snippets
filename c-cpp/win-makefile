@@ -1,0 +1,6 @@
+lockfree-vs-mutex.exe : lockfree-vs-mutex.cpp
+	cl  /EHsc /Fo.\bin\ -c $?
+
+clean:
+	del .\bin\*.exe
+	del .\bin\*.obj
